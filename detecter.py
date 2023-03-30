@@ -24,11 +24,11 @@ if user_file is not None:
     st.title('Current Status and Total Payment of loan')
     fig, ax = plt.subplots(figsize=(10, 5))
     ax = plt.gca()
-    ax.plot(df['loan_status'], df['total_pymnt'], 'o', c='red', alpha=0.1)
+    sns.barplot(x='loan_status', y='total_pymnt',data=data,palette = 'deep')
     ax.set_xlabel('Current Status of Members')
     ax.set_ylabel('Total amount of Pyment')
     st.set_option('deprecation.showPyplotGlobalUse', False)
-    st.pyplot()
+    st.pyplot(fig)
 
     # Display those member whose current status is fully paid
     st.title('Fully Paid Loan Amount Members')
@@ -176,7 +176,7 @@ if user_file is not None:
     st.title('Type of loan and Total Payment')
     fig, ax = plt.subplots(figsize=(10, 5))
     ax = plt.gca()
-    ax.plot(df['total_pymnt'],df['purpose'], 'o', c='blue', alpha=0.1)
+    sns.barplot(x='total_pymnt',y='purpose',data=data,palette = 'deep',capsize=0.05)
     ax.set_xlabel('Type of Loan')
     ax.set_ylabel('Total ammount of Payment')
     plt.xticks(rotation=90)
