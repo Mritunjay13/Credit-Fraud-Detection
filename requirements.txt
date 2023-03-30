@@ -1,7 +1,0 @@
-matplotlib==3.7.1
-pandas==1.5.3
-PyPDF2==3.0.1
-seaborn==0.12.2
-streamlit==1.20.0
-matplotlib==3.7.0
-streamlit==1.20.0
